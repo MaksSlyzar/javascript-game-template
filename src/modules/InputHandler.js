@@ -19,15 +19,15 @@
     }
 
     onKeyDown (evt) {
-        this.keys = [];
-        this.keys.push(evt.keyCode);
+        if (!this.keys.includes(evt.keyCode))
+            this.keys.push(evt.keyCode);
     }
 
     onKeyUp (evt) {
         for (let keyIndex in this.keys) {
             const key = this.keys[keyIndex];
 
-            if (key == event.keyCode) {
+            if (key == evt.keyCode) {
                 this.keys.splice(keyIndex, 1);
             }
         }

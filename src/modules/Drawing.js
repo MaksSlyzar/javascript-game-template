@@ -15,7 +15,6 @@ class Drawing {
     }
 
     onWindowResize (evt, _self) {
-        console.log("Resize window")
         _self.canvas.width = window.innerWidth;
         _self.canvas.height = window.innerHeight;
     }

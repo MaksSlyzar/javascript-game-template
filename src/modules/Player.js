@@ -47,22 +47,25 @@ class PlayerMoveCommand extends Command {
     }
 
     onKeyDown (keys) {
+        console.log(keys)
         // console.log(event.keyCode);
-        switch (keys[0]) {
-            case 65:
-                //left
-                this.moveCallback("left", this._self);
-                break;
-            case 68:
-                this.moveCallback("right", this._self);
-                break;
-            case 87:
-                this.moveCallback("up", this._self);
-                break;
-            case 83:
-                this.moveCallback("down", this._self);
-                break;
-        }
+        keys.forEach(key => {
+            switch (key) {
+                case 65:
+                    //left
+                    this.moveCallback("left", this._self);
+                    break;
+                case 68:
+                    this.moveCallback("right", this._self);
+                    break;
+                case 87:
+                    this.moveCallback("up", this._self);
+                    break;
+                case 83:
+                    this.moveCallback("down", this._self);
+                    break;
+            }
+        });
     }
 }
 
